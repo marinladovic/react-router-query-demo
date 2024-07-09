@@ -1,8 +1,7 @@
 import { createBrowserRouter } from 'react-router-dom';
 
-import LazyLoad from 'shared/lazy-load';
-
-import AppLayout from 'routes/app-layout';
+import AppLayout from '@/routes/app-layout';
+import LazyLoad from '@/shared/lazy-load';
 
 const router = createBrowserRouter([
   {
@@ -11,11 +10,11 @@ const router = createBrowserRouter([
     children: [
       {
         index: true,
-        element: <LazyLoad loader={() => import('features/home')} />
+        element: <LazyLoad loader={() => import('@/features/home')} />
       },
       {
         path: 'second-page',
-        element: <LazyLoad loader={() => import('features/second-page')} title="Second Page" />
+        element: <LazyLoad loader={() => import('@/features/second-page')} title="Second Page" />
       }
     ]
   }
